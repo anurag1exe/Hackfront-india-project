@@ -1,0 +1,965 @@
+{
+  "metadata": {
+    "generated_at": "2026-10-06T12:00:00",
+    "description": "GraphOps mock corporate network telemetry",
+    "node_count": 31,
+    "edge_count": 44
+  },
+  "nodes": [
+    {
+      "id": "usr_jdoe",
+      "labels": [
+        "User"
+      ],
+      "properties": {
+        "username": "jdoe",
+        "role": "Engineer",
+        "department": "Engineering",
+        "privilege_level": "standard",
+        "is_compromised": false,
+        "risk_score": 25
+      }
+    },
+    {
+      "id": "usr_asmith",
+      "labels": [
+        "User"
+      ],
+      "properties": {
+        "username": "asmith",
+        "role": "DevOps Lead",
+        "department": "Engineering",
+        "privilege_level": "elevated",
+        "is_compromised": false,
+        "risk_score": 55
+      }
+    },
+    {
+      "id": "usr_mbrown",
+      "labels": [
+        "User"
+      ],
+      "properties": {
+        "username": "mbrown",
+        "role": "DBA",
+        "department": "Data",
+        "privilege_level": "admin",
+        "is_compromised": false,
+        "risk_score": 72
+      }
+    },
+    {
+      "id": "usr_clee",
+      "labels": [
+        "User"
+      ],
+      "properties": {
+        "username": "clee",
+        "role": "SOC Analyst",
+        "department": "Security",
+        "privilege_level": "elevated",
+        "is_compromised": false,
+        "risk_score": 30
+      }
+    },
+    {
+      "id": "usr_kpatel",
+      "labels": [
+        "User"
+      ],
+      "properties": {
+        "username": "kpatel",
+        "role": "Intern",
+        "department": "Engineering",
+        "privilege_level": "standard",
+        "is_compromised": true,
+        "risk_score": 95
+      }
+    },
+    {
+      "id": "usr_rgarcia",
+      "labels": [
+        "User"
+      ],
+      "properties": {
+        "username": "rgarcia",
+        "role": "CTO",
+        "department": "Executive",
+        "privilege_level": "admin",
+        "is_compromised": false,
+        "risk_score": 40
+      }
+    },
+    {
+      "id": "usr_tnguyen",
+      "labels": [
+        "User"
+      ],
+      "properties": {
+        "username": "tnguyen",
+        "role": "SRE",
+        "department": "Engineering",
+        "privilege_level": "elevated",
+        "is_compromised": false,
+        "risk_score": 48
+      }
+    },
+    {
+      "id": "usr_lwilson",
+      "labels": [
+        "User"
+      ],
+      "properties": {
+        "username": "lwilson",
+        "role": "Finance Manager",
+        "department": "Finance",
+        "privilege_level": "standard",
+        "is_compromised": false,
+        "risk_score": 20
+      }
+    },
+    {
+      "id": "ep_ws01",
+      "labels": [
+        "Endpoint"
+      ],
+      "properties": {
+        "hostname": "WS-ENG-01",
+        "os": "Windows 11",
+        "ip": "10.10.1.11",
+        "is_compromised": false,
+        "risk_score": 15,
+        "asset_value": "low"
+      }
+    },
+    {
+      "id": "ep_ws02",
+      "labels": [
+        "Endpoint"
+      ],
+      "properties": {
+        "hostname": "WS-ENG-02",
+        "os": "macOS 15",
+        "ip": "10.10.1.12",
+        "is_compromised": false,
+        "risk_score": 15,
+        "asset_value": "low"
+      }
+    },
+    {
+      "id": "ep_ws03",
+      "labels": [
+        "Endpoint"
+      ],
+      "properties": {
+        "hostname": "WS-DEVOPS",
+        "os": "Ubuntu 24.04",
+        "ip": "10.10.1.20",
+        "is_compromised": false,
+        "risk_score": 35,
+        "asset_value": "medium"
+      }
+    },
+    {
+      "id": "ep_ws04",
+      "labels": [
+        "Endpoint"
+      ],
+      "properties": {
+        "hostname": "WS-SOC-01",
+        "os": "Windows 11",
+        "ip": "10.10.2.10",
+        "is_compromised": false,
+        "risk_score": 10,
+        "asset_value": "medium"
+      }
+    },
+    {
+      "id": "ep_ws05",
+      "labels": [
+        "Endpoint"
+      ],
+      "properties": {
+        "hostname": "WS-EXEC-01",
+        "os": "macOS 15",
+        "ip": "10.10.3.10",
+        "is_compromised": false,
+        "risk_score": 60,
+        "asset_value": "high"
+      }
+    },
+    {
+      "id": "ep_ws06",
+      "labels": [
+        "Endpoint"
+      ],
+      "properties": {
+        "hostname": "WS-FIN-01",
+        "os": "Windows 11",
+        "ip": "10.10.4.10",
+        "is_compromised": false,
+        "risk_score": 45,
+        "asset_value": "medium"
+      }
+    },
+    {
+      "id": "srv_web01",
+      "labels": [
+        "Server"
+      ],
+      "properties": {
+        "hostname": "PROD-WEB-01",
+        "os": "Ubuntu 24.04",
+        "ip": "10.20.1.10",
+        "service": "nginx",
+        "is_compromised": false,
+        "risk_score": 50,
+        "asset_value": "high"
+      }
+    },
+    {
+      "id": "srv_web02",
+      "labels": [
+        "Server"
+      ],
+      "properties": {
+        "hostname": "PROD-WEB-02",
+        "os": "Ubuntu 24.04",
+        "ip": "10.20.1.11",
+        "service": "nginx",
+        "is_compromised": false,
+        "risk_score": 50,
+        "asset_value": "high"
+      }
+    },
+    {
+      "id": "srv_api01",
+      "labels": [
+        "Server"
+      ],
+      "properties": {
+        "hostname": "PROD-API-01",
+        "os": "Ubuntu 24.04",
+        "ip": "10.20.2.10",
+        "service": "fastapi",
+        "is_compromised": false,
+        "risk_score": 65,
+        "asset_value": "critical"
+      }
+    },
+    {
+      "id": "srv_ci",
+      "labels": [
+        "Server"
+      ],
+      "properties": {
+        "hostname": "CI-JENKINS",
+        "os": "Ubuntu 22.04",
+        "ip": "10.20.3.10",
+        "service": "jenkins",
+        "is_compromised": false,
+        "risk_score": 70,
+        "asset_value": "high"
+      }
+    },
+    {
+      "id": "srv_k8s",
+      "labels": [
+        "Server"
+      ],
+      "properties": {
+        "hostname": "K8S-MASTER",
+        "os": "Ubuntu 24.04",
+        "ip": "10.20.4.10",
+        "service": "kubernetes",
+        "is_compromised": false,
+        "risk_score": 85,
+        "asset_value": "critical"
+      }
+    },
+    {
+      "id": "srv_ldap",
+      "labels": [
+        "Server"
+      ],
+      "properties": {
+        "hostname": "CORP-LDAP",
+        "os": "CentOS 9",
+        "ip": "10.20.5.10",
+        "service": "openldap",
+        "is_compromised": false,
+        "risk_score": 80,
+        "asset_value": "critical"
+      }
+    },
+    {
+      "id": "srv_vpn",
+      "labels": [
+        "Server"
+      ],
+      "properties": {
+        "hostname": "VPN-GW-01",
+        "os": "pfSense",
+        "ip": "10.20.6.10",
+        "service": "openvpn",
+        "is_compromised": false,
+        "risk_score": 75,
+        "asset_value": "critical"
+      }
+    },
+    {
+      "id": "db_pg01",
+      "labels": [
+        "Database"
+      ],
+      "properties": {
+        "hostname": "PG-PROD-01",
+        "engine": "PostgreSQL 16",
+        "ip": "10.30.1.10",
+        "contains_pii": true,
+        "is_compromised": false,
+        "risk_score": 90,
+        "asset_value": "critical"
+      }
+    },
+    {
+      "id": "db_mongo",
+      "labels": [
+        "Database"
+      ],
+      "properties": {
+        "hostname": "MONGO-LOGS",
+        "engine": "MongoDB 7",
+        "ip": "10.30.1.20",
+        "contains_pii": false,
+        "is_compromised": false,
+        "risk_score": 40,
+        "asset_value": "medium"
+      }
+    },
+    {
+      "id": "db_redis",
+      "labels": [
+        "Database"
+      ],
+      "properties": {
+        "hostname": "REDIS-CACHE",
+        "engine": "Redis 7",
+        "ip": "10.30.1.30",
+        "contains_pii": false,
+        "is_compromised": false,
+        "risk_score": 35,
+        "asset_value": "medium"
+      }
+    },
+    {
+      "id": "fw_ext",
+      "labels": [
+        "Firewall"
+      ],
+      "properties": {
+        "hostname": "FW-EXTERNAL",
+        "ip": "10.0.0.1",
+        "zone": "perimeter",
+        "is_compromised": false,
+        "risk_score": 60,
+        "asset_value": "critical"
+      }
+    },
+    {
+      "id": "fw_int",
+      "labels": [
+        "Firewall"
+      ],
+      "properties": {
+        "hostname": "FW-INTERNAL",
+        "ip": "10.10.0.1",
+        "zone": "internal",
+        "is_compromised": false,
+        "risk_score": 45,
+        "asset_value": "high"
+      }
+    },
+    {
+      "id": "app_siem",
+      "labels": [
+        "Application"
+      ],
+      "properties": {
+        "name": "Splunk SIEM",
+        "version": "9.2",
+        "is_compromised": false,
+        "risk_score": 30,
+        "asset_value": "high"
+      }
+    },
+    {
+      "id": "app_jira",
+      "labels": [
+        "Application"
+      ],
+      "properties": {
+        "name": "Jira Cloud",
+        "version": "9.12",
+        "is_compromised": false,
+        "risk_score": 20,
+        "asset_value": "medium"
+      }
+    },
+    {
+      "id": "ext_c2_01",
+      "labels": [
+        "ExternalIP"
+      ],
+      "properties": {
+        "ip": "198.51.100.23",
+        "geo": "RU",
+        "threat_intel": "Known C2",
+        "is_compromised": true,
+        "risk_score": 100,
+        "asset_value": "threat"
+      }
+    },
+    {
+      "id": "ext_c2_02",
+      "labels": [
+        "ExternalIP"
+      ],
+      "properties": {
+        "ip": "203.0.113.45",
+        "geo": "CN",
+        "threat_intel": "Scanning Host",
+        "is_compromised": true,
+        "risk_score": 85,
+        "asset_value": "threat"
+      }
+    },
+    {
+      "id": "ext_cdn",
+      "labels": [
+        "ExternalIP"
+      ],
+      "properties": {
+        "ip": "104.16.132.229",
+        "geo": "US",
+        "threat_intel": "Cloudflare CDN",
+        "is_compromised": false,
+        "risk_score": 5,
+        "asset_value": "low"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "rel_1",
+      "source": "usr_jdoe",
+      "target": "ep_ws01",
+      "type": "AUTHENTICATED_FROM",
+      "properties": {
+        "timestamp": "2026-09-16T08:59:00",
+        "confidence": 0.9,
+        "auth_method": "SSO"
+      }
+    },
+    {
+      "id": "rel_2",
+      "source": "usr_asmith",
+      "target": "ep_ws03",
+      "type": "AUTHENTICATED_FROM",
+      "properties": {
+        "timestamp": "2026-09-29T04:52:00",
+        "confidence": 0.89,
+        "auth_method": "SSH_KEY"
+      }
+    },
+    {
+      "id": "rel_3",
+      "source": "usr_mbrown",
+      "target": "ep_ws02",
+      "type": "AUTHENTICATED_FROM",
+      "properties": {
+        "timestamp": "2026-09-14T12:03:00",
+        "confidence": 0.82,
+        "auth_method": "SSO"
+      }
+    },
+    {
+      "id": "rel_4",
+      "source": "usr_clee",
+      "target": "ep_ws04",
+      "type": "AUTHENTICATED_FROM",
+      "properties": {
+        "timestamp": "2026-09-17T22:58:00",
+        "confidence": 0.61,
+        "auth_method": "MFA"
+      }
+    },
+    {
+      "id": "rel_5",
+      "source": "usr_kpatel",
+      "target": "ep_ws01",
+      "type": "AUTHENTICATED_FROM",
+      "properties": {
+        "timestamp": "2026-09-30T04:28:00",
+        "confidence": 0.84,
+        "auth_method": "PASSWORD"
+      }
+    },
+    {
+      "id": "rel_6",
+      "source": "usr_rgarcia",
+      "target": "ep_ws05",
+      "type": "AUTHENTICATED_FROM",
+      "properties": {
+        "timestamp": "2026-09-19T05:15:00",
+        "confidence": 0.86,
+        "auth_method": "MFA"
+      }
+    },
+    {
+      "id": "rel_7",
+      "source": "usr_tnguyen",
+      "target": "ep_ws03",
+      "type": "AUTHENTICATED_FROM",
+      "properties": {
+        "timestamp": "2026-09-18T22:46:00",
+        "confidence": 0.78,
+        "auth_method": "SSH_KEY"
+      }
+    },
+    {
+      "id": "rel_8",
+      "source": "usr_lwilson",
+      "target": "ep_ws06",
+      "type": "AUTHENTICATED_FROM",
+      "properties": {
+        "timestamp": "2026-09-28T11:12:00",
+        "confidence": 0.92,
+        "auth_method": "SSO"
+      }
+    },
+    {
+      "id": "rel_9",
+      "source": "usr_asmith",
+      "target": "srv_ci",
+      "type": "HAS_ACCESS_TO",
+      "properties": {
+        "timestamp": "2026-09-13T22:39:00",
+        "confidence": 0.71,
+        "permission": "admin"
+      }
+    },
+    {
+      "id": "rel_10",
+      "source": "usr_asmith",
+      "target": "srv_k8s",
+      "type": "HAS_ACCESS_TO",
+      "properties": {
+        "timestamp": "2026-09-30T01:54:00",
+        "confidence": 0.64,
+        "permission": "admin"
+      }
+    },
+    {
+      "id": "rel_11",
+      "source": "usr_mbrown",
+      "target": "db_pg01",
+      "type": "HAS_ACCESS_TO",
+      "properties": {
+        "timestamp": "2026-10-03T00:06:00",
+        "confidence": 0.74,
+        "permission": "dba"
+      }
+    },
+    {
+      "id": "rel_12",
+      "source": "usr_mbrown",
+      "target": "db_mongo",
+      "type": "HAS_ACCESS_TO",
+      "properties": {
+        "timestamp": "2026-09-28T10:14:00",
+        "confidence": 0.78,
+        "permission": "read_write"
+      }
+    },
+    {
+      "id": "rel_13",
+      "source": "usr_clee",
+      "target": "app_siem",
+      "type": "HAS_ACCESS_TO",
+      "properties": {
+        "timestamp": "2026-10-02T23:55:00",
+        "confidence": 0.82,
+        "permission": "analyst"
+      }
+    },
+    {
+      "id": "rel_14",
+      "source": "usr_rgarcia",
+      "target": "srv_k8s",
+      "type": "HAS_ACCESS_TO",
+      "properties": {
+        "timestamp": "2026-09-09T15:21:00",
+        "confidence": 0.95,
+        "permission": "viewer"
+      }
+    },
+    {
+      "id": "rel_15",
+      "source": "usr_tnguyen",
+      "target": "srv_k8s",
+      "type": "HAS_ACCESS_TO",
+      "properties": {
+        "timestamp": "2026-09-24T17:48:00",
+        "confidence": 0.88,
+        "permission": "admin"
+      }
+    },
+    {
+      "id": "rel_16",
+      "source": "usr_tnguyen",
+      "target": "srv_ci",
+      "type": "HAS_ACCESS_TO",
+      "properties": {
+        "timestamp": "2026-10-04T14:46:00",
+        "confidence": 0.91,
+        "permission": "admin"
+      }
+    },
+    {
+      "id": "rel_17",
+      "source": "usr_kpatel",
+      "target": "app_jira",
+      "type": "HAS_ACCESS_TO",
+      "properties": {
+        "timestamp": "2026-10-04T04:05:00",
+        "confidence": 0.64,
+        "permission": "user"
+      }
+    },
+    {
+      "id": "rel_18",
+      "source": "usr_jdoe",
+      "target": "app_jira",
+      "type": "HAS_ACCESS_TO",
+      "properties": {
+        "timestamp": "2026-09-27T21:20:00",
+        "confidence": 0.93,
+        "permission": "user"
+      }
+    },
+    {
+      "id": "rel_19",
+      "source": "ep_ws01",
+      "target": "srv_web01",
+      "type": "CONNECTS_TO",
+      "properties": {
+        "timestamp": "2026-10-01T00:38:00",
+        "confidence": 0.68,
+        "port": 443,
+        "protocol": "HTTPS"
+      }
+    },
+    {
+      "id": "rel_20",
+      "source": "ep_ws03",
+      "target": "srv_ci",
+      "type": "CONNECTS_TO",
+      "properties": {
+        "timestamp": "2026-09-27T13:01:00",
+        "confidence": 0.87,
+        "port": 8080,
+        "protocol": "HTTP"
+      }
+    },
+    {
+      "id": "rel_21",
+      "source": "ep_ws03",
+      "target": "srv_k8s",
+      "type": "CONNECTS_TO",
+      "properties": {
+        "timestamp": "2026-10-03T16:20:00",
+        "confidence": 0.67,
+        "port": 6443,
+        "protocol": "HTTPS"
+      }
+    },
+    {
+      "id": "rel_22",
+      "source": "ep_ws04",
+      "target": "app_siem",
+      "type": "CONNECTS_TO",
+      "properties": {
+        "timestamp": "2026-09-13T04:50:00",
+        "confidence": 0.78,
+        "port": 8089,
+        "protocol": "HTTPS"
+      }
+    },
+    {
+      "id": "rel_23",
+      "source": "ep_ws05",
+      "target": "srv_vpn",
+      "type": "CONNECTS_TO",
+      "properties": {
+        "timestamp": "2026-09-27T15:16:00",
+        "confidence": 0.82,
+        "port": 1194,
+        "protocol": "UDP"
+      }
+    },
+    {
+      "id": "rel_24",
+      "source": "srv_api01",
+      "target": "db_pg01",
+      "type": "QUERIES",
+      "properties": {
+        "timestamp": "2026-09-15T01:07:00",
+        "confidence": 0.91,
+        "query_type": "SELECT/INSERT",
+        "avg_qps": 1200
+      }
+    },
+    {
+      "id": "rel_25",
+      "source": "srv_api01",
+      "target": "db_redis",
+      "type": "QUERIES",
+      "properties": {
+        "timestamp": "2026-10-05T04:08:00",
+        "confidence": 0.61,
+        "query_type": "GET/SET",
+        "avg_qps": 8500
+      }
+    },
+    {
+      "id": "rel_26",
+      "source": "srv_web01",
+      "target": "srv_api01",
+      "type": "CONNECTS_TO",
+      "properties": {
+        "timestamp": "2026-09-25T23:43:00",
+        "confidence": 0.63,
+        "port": 8000,
+        "protocol": "HTTP"
+      }
+    },
+    {
+      "id": "rel_27",
+      "source": "srv_web02",
+      "target": "srv_api01",
+      "type": "CONNECTS_TO",
+      "properties": {
+        "timestamp": "2026-09-06T17:04:00",
+        "confidence": 0.89,
+        "port": 8000,
+        "protocol": "HTTP"
+      }
+    },
+    {
+      "id": "rel_28",
+      "source": "srv_ci",
+      "target": "db_mongo",
+      "type": "QUERIES",
+      "properties": {
+        "timestamp": "2026-09-29T15:29:00",
+        "confidence": 0.76,
+        "query_type": "INSERT",
+        "avg_qps": 50
+      }
+    },
+    {
+      "id": "rel_29",
+      "source": "fw_ext",
+      "target": "fw_int",
+      "type": "ROUTES_THROUGH",
+      "properties": {
+        "timestamp": "2026-09-06T15:31:00",
+        "confidence": 0.66,
+        "rule": "allow_internal"
+      }
+    },
+    {
+      "id": "rel_30",
+      "source": "fw_ext",
+      "target": "srv_vpn",
+      "type": "ROUTES_THROUGH",
+      "properties": {
+        "timestamp": "2026-10-02T04:13:00",
+        "confidence": 0.82,
+        "rule": "vpn_passthrough"
+      }
+    },
+    {
+      "id": "rel_31",
+      "source": "fw_int",
+      "target": "srv_web01",
+      "type": "ROUTES_THROUGH",
+      "properties": {
+        "timestamp": "2026-09-27T12:23:00",
+        "confidence": 0.77,
+        "rule": "dmz_to_web"
+      }
+    },
+    {
+      "id": "rel_32",
+      "source": "fw_int",
+      "target": "srv_web02",
+      "type": "ROUTES_THROUGH",
+      "properties": {
+        "timestamp": "2026-09-17T23:37:00",
+        "confidence": 0.69,
+        "rule": "dmz_to_web"
+      }
+    },
+    {
+      "id": "rel_33",
+      "source": "fw_int",
+      "target": "srv_ldap",
+      "type": "ROUTES_THROUGH",
+      "properties": {
+        "timestamp": "2026-10-01T19:29:00",
+        "confidence": 0.64,
+        "rule": "auth_traffic"
+      }
+    },
+    {
+      "id": "rel_34",
+      "source": "srv_vpn",
+      "target": "fw_int",
+      "type": "ROUTES_THROUGH",
+      "properties": {
+        "timestamp": "2026-10-05T08:51:00",
+        "confidence": 0.85,
+        "rule": "vpn_to_internal"
+      }
+    },
+    {
+      "id": "rel_35",
+      "source": "srv_k8s",
+      "target": "srv_api01",
+      "type": "CONNECTS_TO",
+      "properties": {
+        "timestamp": "2026-09-10T14:33:00",
+        "confidence": 0.84,
+        "port": 8000,
+        "protocol": "HTTP",
+        "reason": "pod_orchestration"
+      }
+    },
+    {
+      "id": "rel_36",
+      "source": "srv_ci",
+      "target": "srv_k8s",
+      "type": "CONNECTS_TO",
+      "properties": {
+        "timestamp": "2026-09-23T23:22:00",
+        "confidence": 1.0,
+        "port": 6443,
+        "protocol": "HTTPS",
+        "reason": "cd_pipeline"
+      }
+    },
+    {
+      "id": "rel_37",
+      "source": "srv_ldap",
+      "target": "srv_vpn",
+      "type": "CONNECTS_TO",
+      "properties": {
+        "timestamp": "2026-09-20T03:25:00",
+        "confidence": 0.94,
+        "port": 389,
+        "protocol": "LDAP",
+        "reason": "auth_backend"
+      }
+    },
+    {
+      "id": "rel_38",
+      "source": "ext_c2_01",
+      "target": "fw_ext",
+      "type": "CONNECTS_TO",
+      "properties": {
+        "timestamp": "2026-10-05T14:14:00",
+        "confidence": 0.65,
+        "port": 443,
+        "protocol": "HTTPS",
+        "alert": "suspicious_beacon"
+      }
+    },
+    {
+      "id": "rel_39",
+      "source": "ext_c2_02",
+      "target": "fw_ext",
+      "type": "CONNECTS_TO",
+      "properties": {
+        "timestamp": "2026-09-07T18:12:00",
+        "confidence": 0.71,
+        "port": 22,
+        "protocol": "SSH",
+        "alert": "brute_force_attempt"
+      }
+    },
+    {
+      "id": "rel_40",
+      "source": "ext_cdn",
+      "target": "srv_web01",
+      "type": "CONNECTS_TO",
+      "properties": {
+        "timestamp": "2026-09-16T01:53:00",
+        "confidence": 0.72,
+        "port": 443,
+        "protocol": "HTTPS",
+        "reason": "cdn_origin_pull"
+      }
+    },
+    {
+      "id": "rel_41",
+      "source": "ep_ws01",
+      "target": "srv_ldap",
+      "type": "CONNECTS_TO",
+      "properties": {
+        "timestamp": "2026-09-30T22:00:00",
+        "confidence": 0.98,
+        "port": 389,
+        "protocol": "LDAP",
+        "alert": "credential_dump_attempt"
+      }
+    },
+    {
+      "id": "rel_42",
+      "source": "srv_ldap",
+      "target": "srv_k8s",
+      "type": "HAS_ACCESS_TO",
+      "properties": {
+        "timestamp": "2026-09-07T12:44:00",
+        "confidence": 0.99,
+        "permission": "service_account",
+        "alert": "privilege_escalation"
+      }
+    },
+    {
+      "id": "rel_43",
+      "source": "srv_web01",
+      "target": "fw_ext",
+      "type": "EXPOSES_SERVICE",
+      "properties": {
+        "timestamp": "2026-09-12T06:28:00",
+        "confidence": 0.97,
+        "port": 443,
+        "service": "public_website"
+      }
+    },
+    {
+      "id": "rel_44",
+      "source": "srv_vpn",
+      "target": "fw_ext",
+      "type": "EXPOSES_SERVICE",
+      "properties": {
+        "timestamp": "2026-09-08T15:41:00",
+        "confidence": 0.94,
+        "port": 1194,
+        "service": "vpn_gateway"
+      }
+    }
+  ]
+}

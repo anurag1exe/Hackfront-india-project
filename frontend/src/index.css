@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+/* ── GraphOps Dark Theme ─────────────────────────────────────────────── */
+
+@theme {
+  --color-graphops-bg: #0a0e17;
+  --color-graphops-surface: #111827;
+  --color-graphops-surface-2: #1e293b;
+  --color-graphops-border: #1e3a5f;
+  --color-graphops-text: #e2e8f0;
+  --color-graphops-text-muted: #64748b;
+  --color-graphops-accent: #00ff88;
+  --color-graphops-accent-dim: #00cc6a;
+  --color-graphops-danger: #ff3b5c;
+  --color-graphops-danger-dim: #cc2e49;
+  --color-graphops-warning: #ffb020;
+  --color-graphops-info: #38bdf8;
+  --color-graphops-purple: #a78bfa;
+}
+
+/* ── Base Reset ──────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-graphops-bg);
+  color: var(--color-graphops-text);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-graphops-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-graphops-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-graphops-text-muted);
+}
+
+/* ── Glow utility classes ────────────────────────────────────────────── */
+
+.glow-green {
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3),
+              0 0 30px rgba(0, 255, 136, 0.1);
+}
+
+.glow-red {
+  box-shadow: 0 0 15px rgba(255, 59, 92, 0.3),
+              0 0 30px rgba(255, 59, 92, 0.1);
+}
+
+.glow-blue {
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3),
+              0 0 30px rgba(56, 189, 248, 0.1);
+}
+
+/* ── Glass panel ─────────────────────────────────────────────────────── */
+
+.glass-panel {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 58, 95, 0.5);
+  border-radius: 12px;
+}
+
+/* ── Pulse animation for compromised nodes ───────────────────────────── */
+
+@keyframes threat-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.threat-pulse {
+  animation: threat-pulse 2s ease-in-out infinite;
+}
+
+/* ── Grid background pattern ─────────────────────────────────────────── */
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(30, 58, 95, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 58, 95, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
