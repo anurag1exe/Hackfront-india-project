@@ -62,7 +62,6 @@ cd ..
 # Run the FastAPI server
 uvicorn main:app --reload --port 8000
 ```
-*The API will be available at `http://localhost:8000` (Swagger UI at `/docs`).*
 
 ### 2. Start the Frontend
 ```bash
@@ -70,7 +69,7 @@ cd frontend
 npm install
 npm run dev
 ```
-*The UI will be available at `http://localhost:5173`.*
+*The UI will be available at `https://hackfront-india-project-83pt.vercel.app/`.*
 
 ## 🔒 Security
 
